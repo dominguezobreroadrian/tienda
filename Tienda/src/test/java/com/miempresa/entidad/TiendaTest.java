@@ -1,5 +1,6 @@
 package com.miempresa.entidad;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -15,5 +16,4 @@ class TiendaTest {
 	void test() {
 		fail("Not yet implemented");
 	}
-
 }
