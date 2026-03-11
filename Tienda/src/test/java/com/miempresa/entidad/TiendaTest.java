@@ -35,8 +35,11 @@ class TiendaTest {
 	} 
 	@Test
 	void calcularPrecioTotal() {
+		Producto p1 = new Producto("Sofá", 90);
+		Tienda t1 = new Tienda();
+		t1.agregarProducto(p1);
 		
-		
+		assertEquals(90, t1.calcularPrecioTotal(), 0.001);
 	}
 	
 	
