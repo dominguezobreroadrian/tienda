@@ -23,6 +23,7 @@ public class Producto {
         this.nombre = nombre;
         this.precio = precio;
     }
+   
 
     /**
      * Devuelve el precio del producto.

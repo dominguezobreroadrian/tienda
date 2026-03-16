@@ -13,8 +13,10 @@ class ProductoTest {
 		Producto p1 = new Producto("Lámpara", 37.9);
 		String resultado = p1.getNombre();
 		String resultadoEsperado = "Lámpara";
-		assertEquals(resultado, resultadoEsperado);
+		assertEquals(resultadoEsperado, resultado);
 	}
+	
+	
 	
 	@Test
 	void testgetPrecio() {
@@ -41,8 +43,11 @@ class ProductoTest {
 		double resultadoEsperado = 30;
 		assertEquals(resultadoEsperado, resultado, 0.001);
 		 
-		assertThrows(IllegalArgumentException.class, () -> {
+		IllegalArgumentException excepcion = assertThrows(IllegalArgumentException.class, () -> {
 	        p1.setPrecio(-10);
 	    });
+		
+		String resultadoEsperado2 = "El precio no puede ser negativo: -10.0";
+		assertEquals(resultadoEsperado2, excepcion.getMessage());
 	}
 }

@@ -31,15 +31,19 @@ class TiendaTest {
 		Tienda t1 = new Tienda();
 		t1.agregarProducto(p1);
 		List<Producto> resultado = t1.obtenerProductos();
-		assertEquals(resultado.get(0).getNombre(), "Sofá");
+		assertEquals("Sofá", resultado.get(0).getNombre());
 	} 
 	@Test
 	void calcularPrecioTotal() {
-		Producto p1 = new Producto("Sofá", 90);
+		Producto p1 = new Producto("Sofá", 90.5);
+		Producto p2 = new Producto("Lámpara", 90.5);
 		Tienda t1 = new Tienda();
-		t1.agregarProducto(p1);
 		
-		assertEquals(90, t1.calcularPrecioTotal(), 0.001);
+		t1.agregarProducto(p1);
+		t1.agregarProducto(p2);
+		
+		double resultado = t1.calcularPrecioTotal();
+		assertEquals(181.0, resultado, 0.001);
 	}
 	
 	
